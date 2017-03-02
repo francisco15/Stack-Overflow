@@ -6,9 +6,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/alerts' %>
     <%= yield %>
+    <footer id="footer">
+        <p>&copy; 2017 <a href="#">Flow Overstack</a>, Powered by Rails</p>
+    </footer>
+    <script>
+      $(".alert").fadeIn(500).css("opacity","0.85").delay(6000).slideUp(1000);
+      $('.alerts').on('click','.alert',function(){ $(this).remove()});
+    </script>
   </body>
 </html>
