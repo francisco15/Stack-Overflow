@@ -15,6 +15,9 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
   end
 
+  def edit
+  end
+  
   def new
     @question = Question.new
   end
