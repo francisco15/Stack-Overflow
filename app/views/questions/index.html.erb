@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="questions">
+        <h2 class="text-center">Top Questions</h2>
+        <%= link_to '+New Question', new_question_path, class:"btn btn-primary" %>
+      </div>
+      <% @questions.each do |question| %>
+      <div class="list-group">
+        <div class="list-group-item">
+          <div class="metrics">
+            <div class="votes">
+              <div class="mini-counts">
+                <span><%= question.votes.size %></span>
+              </div>
+              <div>votes</div>
+            </div>
+            <div class="answers">
+              <div class="mini-counts">
+                <span><%= question.answers.size %></span>
+              </div>
+              <div>answers</div>
+            </div>
+          </div>
+          <div class="summary">
+            <div data-turbolinks="false">
+              <div class="title">
+                <%= link_to "#{question.title}", question %>
+              </div>
+              <div class="info">
+                <%= link_to "#{User.find(question.user_id).email.split('@')[0]}, hace #{time_ago_in_words(question.created_at)}" , question %>
+              </div>
+            </div>
+          </div>
+          <% if user_signed_in? && current_user.id == User.find(question.user_id).id  %>
+            <div class="icons">
+              <h3 class="panel-title-right"><%= link_to "", edit_question_path(question), class: 'fa fa-pencil-square-o' %></h3>
+              <h3 class="panel-title-right"><%= link_to '', question_path(question), class: 'fa fa-trash', method: :delete, data: { confirm: 'Are you sure?' }  %></h3>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
