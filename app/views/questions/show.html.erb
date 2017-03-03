@@ -52,7 +52,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="comment_section">
@@ -70,7 +69,7 @@
                   <%= hidden_field_tag "question_id",@question.id %>
                   <%= hidden_field_tag "comment[user_id]", current_user.id %>
                   <div class="actions">
-                    <%= f.submit 'Comment', class: "btn btn-success" %>
+                    <%= f.submit 'Coment', class: "btn btn-success" %>
                   </div>
                 <% end %>
               </div>
@@ -94,10 +93,10 @@
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <h4 class="text-center"><%="#{@question.answers.size} Answer" %></h4>
+        <h4 class="text-center"><%="#{@question.answers.size} Respuesta(s)" %></h4>
         <% if user_signed_in? %>
           <div class="panel-title-right">
-            <%= link_to 'Create Answer', new_answer_path(question_id: @question.id) %>
+            <%= link_to 'Crear Respuesta', new_answer_path(question_id: @question.id) %>
           </div>
         <% end %>
       </div>
@@ -159,7 +158,7 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <% if user_signed_in? %>
-            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample<%= answer.id %>" aria-expanded="false" aria-controls="collapseExample<%= answer.id %>">Add Comment</a>
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample<%= answer.id %>" aria-expanded="false" aria-controls="collapseExample<%= answer.id %>">Add Coment</a>
             <br><br>
             <div class="collapse" id="collapseExample<%= answer.id %>">
               <div class="well">

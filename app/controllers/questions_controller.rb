@@ -13,6 +13,10 @@ class QuestionsController < ApplicationController
 
   def show
     @answers = @question.answers
+    @comment = Comment.new
+    @comments = @question.comments
+    @vote = Vote.new
+    @votes = @question.votes.count
   end
 
   def edit
