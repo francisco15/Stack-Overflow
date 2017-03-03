@@ -1,6 +1,6 @@
 <% if question.errors.any? %>
   <div id="errors_explanation">
-    <h4><%=pluralize(question.errors.count,"error")%> Errors </h4>
+    <h4><%=pluralize(question.errors.count,"error")%> prohibited this question from being saved </h4>
     <ul>
       <% question.errors.full_messages.each do |message| %>
           <li><%=message %></li>
