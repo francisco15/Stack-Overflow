@@ -18,11 +18,36 @@
 @import "font-awesome";
 
 .navbar {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
-body {
-	margin: 0 0 100px;
+.title a{
+	font-size: 18px;
+}
+
+.info a{
+	text-align: right;
+}
+
+.questions {
+	margin-bottom: 30px;
+}
+
+.panel-title{
+	font-size: 30px;
+	font-style: normal;
+}
+
+.mini-counts span{
+	font-size: 20px;
+}
+
+.panel-votes{
+	justify-content: initial;
+}
+
+.text-left{
+	font-size: 25px;
 }
 
 .success{
@@ -54,3 +79,4 @@ body {
     margin-left: -29px;
     border: none;
 }
+

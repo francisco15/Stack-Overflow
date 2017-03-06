@@ -3,7 +3,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="questions">
         <h2 class="text-center">Top Questions</h2>
-        <%= link_to '+New Question', new_question_path, class:"btn btn-primary" %>
+        <%= link_to 'Ask Question', new_question_path, class:"btn btn-primary" %>
       </div>
       <% @questions.each do |question| %>
       <div class="list-group">
@@ -28,7 +28,7 @@
                 <%= link_to "#{question.title}", question %>
               </div>
               <div class="info">
-                <%= link_to "#{User.find(question.user_id).email.split('@')[0]}, #{time_ago_in_words(question.created_at)}" , question %>
+                <%= link_to "Asked #{time_ago_in_words(question.created_at)}, #{User.find(question.user_id).email.split('@')[0]}" , question %>
               </div>
             </div>
           </div>
