@@ -5,7 +5,7 @@ class VotesController < ApplicationController
         @vote = Vote.new(vote_params)
         if @vote.save
         else
-          flash[:alert] = "The Vote hasn't been saved, due an system error"
+          flash[:alert] = "The Vote hasn't been saved, due an error"
         end
       else
         Vote.destroy_vote?(current_user.id, params[:vote][:votable_id], params[:vote][:votable_type])

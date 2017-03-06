@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
     else
-      flash[:alert] = "The comment hasn't been created, due a system error"
+      flash[:alert] = "The comment hasn't been created"
     end
     redirect_to question_path(id: params[:question_id])
   end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   def update
     if @comment.update(comment_params)
     else
-      flash[:alert] = "The comment hasn't been edited, due a system error"
+      flash[:alert] = "The comment hasn't been edited"
     end
     redirect_to question_path(id: params[:question_id])
   end

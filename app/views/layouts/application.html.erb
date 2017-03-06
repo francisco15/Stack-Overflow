@@ -12,9 +12,7 @@
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/alerts' %>
     <%= yield %>
-    <footer id="footer">
-        <p>&copy; 2017 <a href="#">Flow Overstack</a>, Powered by Rails</p>
-    </footer>
+  
     <script>
       $(".alert").fadeIn(500).css("opacity","0.85").delay(6000).slideUp(1000);
       $('.alerts').on('click','.alert',function(){ $(this).remove()});

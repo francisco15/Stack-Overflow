@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.save
     else
-      flash[:alert] = "The answer hasn't been created, due a system error"
+      flash[:alert] = "The answer hasn't been created"
     end
     redirect_to question_path(id: params[:answer][:question_id])
   end
@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
   def update
     if @answer.update(answer_params)
     else
-      flash[:alert] = "The answer hasn't been edited, due a system error"
+      flash[:alert] = "The answer hasn't been edited"
     end
     redirect_to question_path(id: params[:answer][:question_id])
   end
